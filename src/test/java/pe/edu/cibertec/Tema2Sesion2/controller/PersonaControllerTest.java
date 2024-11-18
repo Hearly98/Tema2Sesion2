@@ -49,8 +49,7 @@ class PersonaControllerTest {
     @Test
     void obtenerPersona() {
         Persona persona = generarPersona();
-        when(personaServiceImpl.obtenerPersona(anyInt())).thenReturn(pers
-                ona);
+        when(personaServiceImpl.obtenerPersona(anyInt())).thenReturn(persona);
         ResponseEntity<?> responseEntity =
                 personaController.obtenerPersona(1);
         assertEquals(HttpStatus.OK,
@@ -63,8 +62,7 @@ class PersonaControllerTest {
     @Test
     void registrarPersona() {
         Persona persona = generarPersona();
-        when(personaServiceImpl.registrarPersona(any(Persona.class))).the
-        nReturn(persona);
+        when(personaServiceImpl.registrarPersona(any(Persona.class))).thenReturn(persona);
         ResponseEntity<?> responseEntity =
                 personaController.registrarPersona(persona);
         assertEquals(HttpStatus.OK,
